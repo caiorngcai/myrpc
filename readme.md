@@ -11,5 +11,15 @@
   2.sample-client:定义接口和协议  
   3.sample-app：创建代理对象，调用用户服务层的接口  
 ###二.关键技术点讲解
+公共层：  
+1.使用Objenesis创建对象时，需要一个无参构造器，这个类库一般用于它一般用于：   
+           序列化、远程处理和持久化：无需调用代码即可将Java类实例化并存储特定状态。  
+           代理、AOP库和Mock对象：可以创建特定Java类的子类而无需考虑super()构造器。  
+           容器框架：可以用非标准方式动态实例化Java类。例如Spring引入Objenesis后，Bean不再必须提供无参构造器了。  
+ 2.netty中的编解码器需要分别继承MessageToByteEncoder，ByteToMessageDecoder，编码器把对象转化为字节数组后，直接写到输出流即可，  
+ 解码器把字节数组转化成对象后添加到list中  
+ 
+
+
   
   
