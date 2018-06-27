@@ -10,7 +10,7 @@ public class RpcRequest {
     private String requestId;//请求封装信息的id
     private String className;//类名
     private String methodName;//方法名
-    private Class<?> parameterTypes;//参数类型
+    private Class<?>[] parameterTypes;//参数类型
     private Object[] parameters;//参数列表
 
     public String getRequestId() {
@@ -37,11 +37,11 @@ public class RpcRequest {
         this.methodName = methodName;
     }
 
-    public Class<?> getParameterTypes() {
+    public Class<?>[] getParameterTypes() {
         return parameterTypes;
     }
 
-    public void setParameterTypes(Class<?> parameterTypes) {
+    public void setParameterTypes(Class<?>[] parameterTypes) {
         this.parameterTypes = parameterTypes;
     }
 
